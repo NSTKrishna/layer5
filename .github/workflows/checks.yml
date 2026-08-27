@@ -21,6 +21,9 @@ jobs:
       - name: Check CONTRIBUTING versions
         run: npm run check:contributing-versions
 
+      - name: Run unit tests
+        run: npm test
+
       - name: Build
         run: npm run build
 
