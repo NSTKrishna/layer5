@@ -29,7 +29,7 @@ const cookieData = [
           "We use Google Tag Manager, Google Analytics, Google Ads conversion tracking, and Google reCAPTCHA to manage tracking, analyze website usage, and prevent automated abuse. Google Analytics uses anonymized IP addresses to ensure no direct correlation to individuals.",
         category: "Functional and Marketing",
         privacyLink:
-          '<a href="https://policies.google.com/privacy">Google Privacy Preferences</a>',
+          "<a href=\"https://policies.google.com/privacy\">Google Privacy Preferences</a>",
       },
       {
         provider: "Cloudflare",
@@ -37,7 +37,7 @@ const cookieData = [
           "Cloudflare cookies distinguish users sharing the same IP address for rate limiting and performance optimization.",
         category: "Necessary & Performance",
         privacyLink:
-          '<a href="https://www.cloudflare.com/privacypolicy/">Cloudflare Privacy Policy</a>',
+          "<a href=\"https://www.cloudflare.com/privacypolicy/\">Cloudflare Privacy Policy</a>",
       },
       {
         provider: "GitHub",
@@ -45,7 +45,7 @@ const cookieData = [
           "GitHub cookies support seamless integration with our open-source community platforms, such as remembering your preferences during contributions.",
         category: "Functional",
         privacyLink:
-          '<a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement">GitHub Privacy Policy</a>',
+          "<a href=\"https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement\">GitHub Privacy Policy</a>",
       },
       {
         provider: "Slack",
@@ -53,7 +53,7 @@ const cookieData = [
           "Slack cookies enhance your experience in our community channels by remembering preferences and enabling seamless communication.",
         category: "Functional",
         privacyLink:
-          '<a href="https://slack.com/trust/privacy/privacy-policy">Slack Privacy Policy</a>',
+          "<a href=\"https://slack.com/trust/privacy/privacy-policy\">Slack Privacy Policy</a>",
       },
     ],
   },

@@ -29,7 +29,7 @@ const privacyData = [
         categories:
           "IP Address, device type, browser information, server logs.",
         lawfulBasis:
-          '<strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to ensure the security, availability, and performance of our digital properties.',
+          "<strong>Legitimate Interest</strong> (<a href=\"https://gdpr-info.eu/art-6-gdpr/\">Article 6(1)(f)</a>) - to ensure the security, availability, and performance of our digital properties.",
         retention:
           "Up to 26 months for server logs, depending on the specific data and its purpose.",
       },
@@ -38,7 +38,7 @@ const privacyData = [
         categories:
           "Anonymized IP address, cookie identifiers, pages visited, duration of visit, clickstream data.",
         lawfulBasis:
-          '<strong>Consent</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(a)</a>) - for non-essential analytics and tracking cookies. You can manage your consent through our cookie banner.',
+          "<strong>Consent</strong> (<a href=\"https://gdpr-info.eu/art-6-gdpr/\">Article 6(1)(a)</a>) - for non-essential analytics and tracking cookies. You can manage your consent through our cookie banner.",
         retention:
           "Up to 26 months for analytics data, depending on the specific service used.",
       },
@@ -53,7 +53,7 @@ const privacyData = [
         categories:
           "Name, email address, GitHub username, public profile information, content of your contributions (code, comments, issues), and communications.",
         lawfulBasis:
-          '<strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to operate, manage, and grow our collaborative open source community.',
+          "<strong>Legitimate Interest</strong> (<a href=\"https://gdpr-info.eu/art-6-gdpr/\">Article 6(1)(f)</a>) - to operate, manage, and grow our collaborative open source community.",
         retention:
           "Your contributions are retained indefinitely as part of the public project record. Other personal data is retained for the duration of your participation and up to 12 months thereafter.",
       },
@@ -68,7 +68,7 @@ const privacyData = [
         categories:
           "Name, email address, company name, securely hashed password, GitHub user ID (if used for single sign-on).",
         lawfulBasis:
-          '<strong>Performance of a Contract</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(b)</a>) - this data is necessary to fulfill our contractual obligation to provide the service you have signed up for.',
+          "<strong>Performance of a Contract</strong> (<a href=\"https://gdpr-info.eu/art-6-gdpr/\">Article 6(1)(b)</a>) - this data is necessary to fulfill our contractual obligation to provide the service you have signed up for.",
         retention:
           "For the duration of your account activity and up to 12 months thereafter for account reactivation and support purposes.",
       },
@@ -77,7 +77,7 @@ const privacyData = [
         categories:
           "Billing address, payment card information (we do not store full card details; they are securely processed by our payment provider, who provides us with a transaction token and confirmation).",
         lawfulBasis:
-          '<strong>Performance of a Contract</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(b)</a>).',
+          "<strong>Performance of a Contract</strong> (<a href=\"https://gdpr-info.eu/art-6-gdpr/\">Article 6(1)(b)</a>).",
         retention:
           "Financial data is retained for 7 years to comply with legal and tax obligations.",
       },
@@ -86,7 +86,7 @@ const privacyData = [
           "To communicate with you about the service (e.g., important updates, security alerts, billing information).",
         categories: "Email address.",
         lawfulBasis:
-          '<strong>Performance of a Contract</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(b)</a>) and <strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to provide you with essential information about the service you are using.',
+          "<strong>Performance of a Contract</strong> (<a href=\"https://gdpr-info.eu/art-6-gdpr/\">Article 6(1)(b)</a>) and <strong>Legitimate Interest</strong> (<a href=\"https://gdpr-info.eu/art-6-gdpr/\">Article 6(1)(f)</a>) - to provide you with essential information about the service you are using.",
         retention:
           "For the duration of your account activity and up to 12 months thereafter for account reactivation and support purposes.",
       },
@@ -95,7 +95,7 @@ const privacyData = [
         categories:
           "Service usage data, API logs, user activity logs, device and browser information.",
         lawfulBasis:
-          '<strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to maintain and improve the quality and functionality of our services.',
+          "<strong>Legitimate Interest</strong> (<a href=\"https://gdpr-info.eu/art-6-gdpr/\">Article 6(1)(f)</a>) - to maintain and improve the quality and functionality of our services.",
         retention:
           "For the duration of your account activity and up to 12 months thereafter for account reactivation and support purposes.",
       },
@@ -109,7 +109,7 @@ const privacyData = [
         categories:
           "Name, email address, and any other information you provide in the content of your message.",
         lawfulBasis:
-          '<strong>Legitimate Interest</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(f)</a>) - to effectively respond to user inquiries and provide assistance.',
+          "<strong>Legitimate Interest</strong> (<a href=\"https://gdpr-info.eu/art-6-gdpr/\">Article 6(1)(f)</a>) - to effectively respond to user inquiries and provide assistance.",
         retention:
           "For the duration of the support interaction and up to 12 months thereafter for quality assurance purposes.",
       },
@@ -123,7 +123,7 @@ const privacyData = [
           "To send you newsletters, product updates, and other marketing materials.",
         categories: "Name, email address.",
         lawfulBasis:
-          '<strong>Consent</strong> (<a href="https://gdpr-info.eu/art-6-gdpr/">Article 6(1)(a)</a>) - you provide your consent when you opt-in to receive these communications, and you can unsubscribe at any time.',
+          "<strong>Consent</strong> (<a href=\"https://gdpr-info.eu/art-6-gdpr/\">Article 6(1)(a)</a>) - you provide your consent when you opt-in to receive these communications, and you can unsubscribe at any time.",
         retention: "Until you unsubscribe.",
       },
     ],

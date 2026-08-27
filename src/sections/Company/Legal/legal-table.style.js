@@ -30,18 +30,18 @@ export const StyledTableCell = styled(TableCell)(({ theme }) => ({
   padding: "0.75rem",
   borderBottom: `1px solid ${theme.palette.divider}`,
   borderRadius: 0,
-  fontFamily: '"Qanelas Soft", "Open Sans", sans-serif',
+  fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
 }));
 
 export const StyledHeaderCell = styled(StyledTableCell)(() => ({
   fontWeight: 600,
   backgroundColor: "transparent",
-  fontFamily: '"Qanelas Soft", "Open Sans", sans-serif',
+  fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
 }));
 
 // Custom theme with Qanelas Soft font family for legal tables
 export const legalTableTheme = createTheme({
   typography: {
-    fontFamily: '"Qanelas Soft", "Open Sans", sans-serif',
+    fontFamily: "\"Qanelas Soft\", \"Open Sans\", sans-serif",
   },
 });

@@ -112,65 +112,65 @@ const subProcessorData = [
       {
         name: "Amazon Web Services US",
         contactInfo:
-          '<a href="https://aws.amazon.com/contact-us/">https://aws.amazon.com/contact-us/</a>',
+          "<a href=\"https://aws.amazon.com/contact-us/\">https://aws.amazon.com/contact-us/</a>",
         dataProtectionAddendum:
-          '<a href="https://aws.amazon.com/compliance/data-privacy-faq/">https://aws.amazon.com/compliance/data-privacy-faq/</a>',
+          "<a href=\"https://aws.amazon.com/compliance/data-privacy-faq/\">https://aws.amazon.com/compliance/data-privacy-faq/</a>",
       },
       {
         name: "Equinix",
         contactInfo:
-          '<a href="https://www.equinix.com/contact-us/">https://www.equinix.com/contact-us/</a>',
+          "<a href=\"https://www.equinix.com/contact-us/\">https://www.equinix.com/contact-us/</a>",
         dataProtectionAddendum:
-          '<a href="https://www.equinix.com/legal/data-protection-addendum/">https://www.equinix.com/legal/data-protection-addendum/</a>',
+          "<a href=\"https://www.equinix.com/legal/data-protection-addendum/\">https://www.equinix.com/legal/data-protection-addendum/</a>",
       },
       {
         name: "GitHub, Inc.",
         contactInfo:
-          'GitHub Privacy Office<br />88 Colin P. Kelly Jr. Street<br />San Francisco, California 94107 USA<br />dpo@github.com<br /><a href="https://support.github.com/contact">https://support.github.com/contact</a>',
+          "GitHub Privacy Office<br />88 Colin P. Kelly Jr. Street<br />San Francisco, California 94107 USA<br />dpo@github.com<br /><a href=\"https://support.github.com/contact\">https://support.github.com/contact</a>",
         dataProtectionAddendum:
-          '<a href="https://docs.github.com/en/site-policy/privacy-policies">https://docs.github.com/en/site-policy/privacy-policies</a>',
+          "<a href=\"https://docs.github.com/en/site-policy/privacy-policies\">https://docs.github.com/en/site-policy/privacy-policies</a>",
       },
       {
         name: "Cloudflare, Inc.",
         contactInfo:
-          '101 Townsend Street<br />San Francisco, CA 94107<br />USA<br />Emily Hancock<br />Data Protection Officer<br />legal@cloudflare.com<br /><a href="https://www.cloudflare.com/contact/">https://www.cloudflare.com/contact/</a>',
+          "101 Townsend Street<br />San Francisco, CA 94107<br />USA<br />Emily Hancock<br />Data Protection Officer<br />legal@cloudflare.com<br /><a href=\"https://www.cloudflare.com/contact/\">https://www.cloudflare.com/contact/</a>",
         dataProtectionAddendum:
-          '<a href="https://www.cloudflare.com/terms/cloudflare-dpa/">https://www.cloudflare.com/terms/cloudflare-dpa/</a>',
+          "<a href=\"https://www.cloudflare.com/terms/cloudflare-dpa/\">https://www.cloudflare.com/terms/cloudflare-dpa/</a>",
       },
       {
         name: "Stripe",
         contactInfo:
-          'Stripe, Inc.<br />510 Townsend St.<br />San Francisco, CA 94103<br />USA<br />dpo@stripe.com<br /><a href="https://support.stripe.com/contact">https://support.stripe.com/contact</a>',
+          "Stripe, Inc.<br />510 Townsend St.<br />San Francisco, CA 94103<br />USA<br />dpo@stripe.com<br /><a href=\"https://support.stripe.com/contact\">https://support.stripe.com/contact</a>",
         dataProtectionAddendum:
-          '<a href="https://stripe.com/privacy">https://stripe.com/privacy</a>',
+          "<a href=\"https://stripe.com/privacy\">https://stripe.com/privacy</a>",
       },
       {
         name: "Slack",
         contactInfo:
-          'Slack Technologies, LLC<br />500 Howard Street<br />San Francisco, CA 94105<br />USA<br />dpo@slack.com<br /><a href="https://slack.com/contact">https://slack.com/contact</a>',
+          "Slack Technologies, LLC<br />500 Howard Street<br />San Francisco, CA 94105<br />USA<br />dpo@slack.com<br /><a href=\"https://slack.com/contact\">https://slack.com/contact</a>",
         dataProtectionAddendum:
-          '<a href="https://slack.com/privacy">https://slack.com/privacy</a>',
+          "<a href=\"https://slack.com/privacy\">https://slack.com/privacy</a>",
       },
       {
         name: "Celonis, Inc. (make.com)",
         contactInfo:
-          'Celonis, Inc.<br />800 W El Camino Real, Suite 180<br />Mountain View, CA 94040<br />USA<br />dpo@celonis.com<br /><a href="https://www.celonis.com/contact/">https://www.celonis.com/contact/</a>',
+          "Celonis, Inc.<br />800 W El Camino Real, Suite 180<br />Mountain View, CA 94040<br />USA<br />dpo@celonis.com<br /><a href=\"https://www.celonis.com/contact/\">https://www.celonis.com/contact/</a>",
         dataProtectionAddendum:
-          '<a href="https://www.make.com/en/privacy-and-gdpr">https://www.make.com/en/privacy-and-gdpr</a>',
+          "<a href=\"https://www.make.com/en/privacy-and-gdpr\">https://www.make.com/en/privacy-and-gdpr</a>",
       },
       {
         name: "ClickUp",
         contactInfo:
-          'ClickUp, Inc.<br />55 Almaden Blvd, Suite 650<br />San Jose, CA 95113<br />USA<br />dpo@clickup.com<br /><a href="https://www.clickup.com/contact">https://www.clickup.com/contact</a>',
+          "ClickUp, Inc.<br />55 Almaden Blvd, Suite 650<br />San Jose, CA 95113<br />USA<br />dpo@clickup.com<br /><a href=\"https://www.clickup.com/contact\">https://www.clickup.com/contact</a>",
         dataProtectionAddendum:
-          '<a href="https://www.clickup.com/privacy">https://www.clickup.com/privacy</a>',
+          "<a href=\"https://www.clickup.com/privacy\">https://www.clickup.com/privacy</a>",
       },
       {
         name: "Atlassian StatusPage",
         contactInfo:
-          'Atlassian, Inc.<br />350 Bush Street, 6th Floor<br />San Francisco, CA 94104<br />USA<br />dpo@atlassian.com<br /><a href="https://www.atlassian.com/contact">https://www.atlassian.com/contact</a>',
+          "Atlassian, Inc.<br />350 Bush Street, 6th Floor<br />San Francisco, CA 94104<br />USA<br />dpo@atlassian.com<br /><a href=\"https://www.atlassian.com/contact\">https://www.atlassian.com/contact</a>",
         dataProtectionAddendum:
-          '<a href="https://www.atlassian.com/legal/privacy-policy">https://www.atlassian.com/legal/privacy-policy</a>',
+          "<a href=\"https://www.atlassian.com/legal/privacy-policy\">https://www.atlassian.com/legal/privacy-policy</a>",
       },
     ],
   },
@@ -271,35 +271,35 @@ const SubProcessors = () => {
                               <TableRow>
                                 {section.section ===
                                 "Third-Party Sub-Processors" ? (
-                                  <>
-                                    <StyledHeaderCell>Name</StyledHeaderCell>
-                                    <StyledHeaderCell>
+                                    <>
+                                      <StyledHeaderCell>Name</StyledHeaderCell>
+                                      <StyledHeaderCell>
                                       Applicable Services
-                                    </StyledHeaderCell>
-                                    <StyledHeaderCell>
+                                      </StyledHeaderCell>
+                                      <StyledHeaderCell>
                                       Type of Service
-                                    </StyledHeaderCell>
-                                    <StyledHeaderCell>
+                                      </StyledHeaderCell>
+                                      <StyledHeaderCell>
                                       Data Shared
-                                    </StyledHeaderCell>
-                                    <StyledHeaderCell>
+                                      </StyledHeaderCell>
+                                      <StyledHeaderCell>
                                       Sub-Processor Hosting Regions
-                                    </StyledHeaderCell>
-                                    <StyledHeaderCell>
+                                      </StyledHeaderCell>
+                                      <StyledHeaderCell>
                                       Additional Information
-                                    </StyledHeaderCell>
-                                  </>
-                                ) : (
-                                  <>
-                                    <StyledHeaderCell>Name</StyledHeaderCell>
-                                    <StyledHeaderCell>
+                                      </StyledHeaderCell>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <StyledHeaderCell>Name</StyledHeaderCell>
+                                      <StyledHeaderCell>
                                       Contact Information
-                                    </StyledHeaderCell>
-                                    <StyledHeaderCell>
+                                      </StyledHeaderCell>
+                                      <StyledHeaderCell>
                                       Data Protection Addendum
-                                    </StyledHeaderCell>
-                                  </>
-                                )}
+                                      </StyledHeaderCell>
+                                    </>
+                                  )}
                               </TableRow>
                             </TableHead>
                             <TableBody>
@@ -321,37 +321,37 @@ const SubProcessors = () => {
                                   <StyledTableCell>{row.name}</StyledTableCell>
                                   {section.section ===
                                   "Third-Party Sub-Processors" ? (
-                                    <>
-                                      <StyledTableCell>
-                                        {row.applicableServices}
-                                      </StyledTableCell>
-                                      <StyledTableCell>
-                                        {row.typeOfService}
-                                      </StyledTableCell>
-                                      <StyledTableCell>
-                                        {row.dataShared}
-                                      </StyledTableCell>
-                                      <StyledTableCell>
-                                        {row.hostingRegions}
-                                      </StyledTableCell>
-                                      <StyledTableCell>
-                                        {row.additionalInfo}
-                                      </StyledTableCell>
-                                    </>
-                                  ) : (
-                                    <>
-                                      <StyledTableCell
-                                        dangerouslySetInnerHTML={{
-                                          __html: row.contactInfo,
-                                        }}
-                                      />
-                                      <StyledTableCell
-                                        dangerouslySetInnerHTML={{
-                                          __html: row.dataProtectionAddendum,
-                                        }}
-                                      />
-                                    </>
-                                  )}
+                                      <>
+                                        <StyledTableCell>
+                                          {row.applicableServices}
+                                        </StyledTableCell>
+                                        <StyledTableCell>
+                                          {row.typeOfService}
+                                        </StyledTableCell>
+                                        <StyledTableCell>
+                                          {row.dataShared}
+                                        </StyledTableCell>
+                                        <StyledTableCell>
+                                          {row.hostingRegions}
+                                        </StyledTableCell>
+                                        <StyledTableCell>
+                                          {row.additionalInfo}
+                                        </StyledTableCell>
+                                      </>
+                                    ) : (
+                                      <>
+                                        <StyledTableCell
+                                          dangerouslySetInnerHTML={{
+                                            __html: row.contactInfo,
+                                          }}
+                                        />
+                                        <StyledTableCell
+                                          dangerouslySetInnerHTML={{
+                                            __html: row.dataProtectionAddendum,
+                                          }}
+                                        />
+                                      </>
+                                    )}
                                 </StyledTableRow>
                               ))}
                             </TableBody>

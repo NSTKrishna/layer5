@@ -54,20 +54,20 @@ const RelatedPosts = (props) => {
         >
           {postType === "blogs"
             ? relatedPosts.map((item) => {
-                const post = item.post || item;
-                return (
-                  <Col className="cardCol" $xs={12} key={post.fields.slug}>
-                    <Card frontmatter={post.frontmatter} fields={post.fields} />
-                  </Col>
-                );
-              })
+              const post = item.post || item;
+              return (
+                <Col className="cardCol" $xs={12} key={post.fields.slug}>
+                  <Card frontmatter={post.frontmatter} fields={post.fields} />
+                </Col>
+              );
+            })
             : relatedPosts.map((post) => {
-                return (
-                  <Col className="cardCol" $xs={12} key={post.fields.slug}>
-                    <Card frontmatter={post.frontmatter} fields={post.fields} />
-                  </Col>
-                );
-              })}
+              return (
+                <Col className="cardCol" $xs={12} key={post.fields.slug}>
+                  <Card frontmatter={post.frontmatter} fields={post.fields} />
+                </Col>
+              );
+            })}
           <Col $xs={12} $lg={12} className="allBlogs">
             <div className="allBlogs_card">
               <Link to={linkToAllItems}>
