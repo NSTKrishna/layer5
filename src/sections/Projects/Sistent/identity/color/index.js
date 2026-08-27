@@ -7,7 +7,14 @@ import ContextVisuals1 from "../../../../../assets/images/app/projects/sistent/c
 import ContextVisuals2 from "../../../../../assets/images/app/projects/sistent/context-visuals-2.webp";
 import ContextVisuals3 from "../../../../../assets/images/app/projects/sistent/context-visuals-3.webp";
 import ContextVisuals4 from "../../../../../assets/images/app/projects/sistent/context-visuals-4.webp";
-import { useTheme, Tooltip, Snackbar, IconButton, styled, NoSsr } from "@sistent/sistent";
+import {
+  useTheme,
+  Tooltip,
+  Snackbar,
+  IconButton,
+  styled,
+  NoSsr,
+} from "@sistent/sistent";
 import { SistentLayout } from "../../sistent-layout";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 
@@ -95,10 +102,17 @@ const SistentIdentityColor = () => {
   const [snackbarMsg, setSnackbarMsg] = useState("");
 
   const handleCopy = (text) => {
-    navigator.clipboard.writeText(text).then(() => {
-      setSnackbarMsg(`Copied ${text} to clipboard!`);
-      setSnackbarOpen(true);
-    });
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setSnackbarMsg(`Copied ${text} to clipboard!`);
+        setSnackbarOpen(true);
+      })
+      .catch((error) => {
+        console.error("Failed to copy code to clipboard:", error);
+        setSnackbarMsg("Couldn't copy to clipboard.");
+        setSnackbarOpen(true);
+      });
   };
 
   return (

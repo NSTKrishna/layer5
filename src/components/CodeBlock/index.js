@@ -53,10 +53,16 @@ const Code = ({
 
   const finalCode = codeString || code || "";
 
-  const handleClick = () => {
-    copyToClipboard(finalCode);
-    setCopyText("Copied!");
-    setTimeout(() => setCopyText("Copy"), 1000);
+  const handleClick = async () => {
+    try {
+      await copyToClipboard(finalCode);
+      setCopyText("Copied!");
+    } catch (error) {
+      console.error("Failed to copy code to clipboard:", error);
+      setCopyText("Copy failed");
+    } finally {
+      setTimeout(() => setCopyText("Copy"), 1000);
+    }
   };
 
   const handleToggle = () => {

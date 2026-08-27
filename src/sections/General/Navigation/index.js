@@ -241,10 +241,9 @@ const Navigation = () => {
         setUserData(data);
       } catch (error) {
         if (error?.response?.status === 401) {
-          // unauthorized token
+          // An expired or invalid token is expected to fail silently.
         } else {
-          // only for debugging purposes, no need to log
-          //  console.error("There was a problem with your fetch operation:", error);
+          console.error("Failed to fetch user profile:", error);
         }
       }
     };

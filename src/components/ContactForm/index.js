@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Button from "../../reusecore/Button";
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
@@ -6,20 +6,12 @@ import logo from "../../assets/images/app/layer5.svg";
 import ContactFormWrapper from "./contact-form.style";
 
 const ContactForm = () => {
-  const [memberFormOne, setmemberFormOne] = useState({});
-  const [submit, setSubmit] = useState(false);
+  const [, setmemberFormOne] = useState({});
+  const [submitted, setSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    if (submit) {
-      // Webhook to handle all event forms and all signup forms, except for the community member form.
-      axios.post("https://hook.us1.make.com/nficb3d7swqkclkl467st4hp4cg65u8o", {
-        memberFormOne,
-      });
-      window.scrollTo(0, 700);
-    }
-  }, [submit]);
-
-  if (submit) {
+  if (submitted) {
     document.querySelector(".showForm").style.height = "20rem";
     return (
       <ContactFormWrapper>
@@ -45,9 +37,28 @@ const ContactForm = () => {
             scope: "",
             form: "contact",
           }}
-          onSubmit={(values) => {
-            setmemberFormOne(values);
-            setSubmit(true);
+          onSubmit={async (values) => {
+            setSubmitError("");
+            setIsSubmitting(true);
+            try {
+              // Webhook to handle all event forms and all signup forms, except for the community member form.
+              await axios.post(
+                "https://hook.us1.make.com/nficb3d7swqkclkl467st4hp4cg65u8o",
+                {
+                  memberFormOne: values,
+                },
+              );
+              setmemberFormOne(values);
+              setSubmitted(true);
+              window.scrollTo(0, 700);
+            } catch (error) {
+              console.error("Contact form submission failed:", error);
+              setSubmitError(
+                "Something went wrong while submitting the form. Please try again.",
+              );
+            } finally {
+              setIsSubmitting(false);
+            }
           }}
         >
           <Form className="form" method="post">
@@ -204,9 +215,12 @@ const ContactForm = () => {
                   <span>Subscribe to our newsletter</span>
                 </label>
               </div>
+              {submitError && <p style={{ color: "red" }}>{submitError}</p>}
               <div className="form-submit">
                 <Button
-                  $secondary                  type="submit"
+                  $secondary
+                  type="submit"
+                  disabled={isSubmitting}
                   className="btn-next"
                   title="Submit"
                 />

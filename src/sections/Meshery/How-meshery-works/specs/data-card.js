@@ -6,52 +6,65 @@ import ConfigurationIcon from "../images/configuration-icon.svg";
 import { Col, Row } from "../../../../reusecore/Layout";
 import Counter from "../../../../reusecore/Counter";
 import { URL } from "../../../Counters/index";
+import { fetchJson } from "../../../../utils/api";
 
 const DataCardWrapper = styled.div`
-  background: ${props => props.theme.grey222222ToWhite};
+  background: ${(props) => props.theme.grey222222ToWhite};
   border-radius: 10px;
-  color: ${props => props.theme.text};
+  color: ${(props) => props.theme.text};
   padding: 2rem;
   transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-  
-  ul{
+
+  ul {
     list-style: none;
     padding: 0;
   }
-    .col-1 li{
-      display: flex;
-      align-items: center;
-      vertical-align: center;
-      margin-bottom: 1.5rem;
-      img{
-        margin-right: 1rem;
-      }
-      h5{
-        font-weight: 600;
-        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-      }
-     }
-     
-    .col-2 li {
-      h3{
-        color: ${props => props.theme.secondaryColor};
-        font-weight: 700;
-      }
-      p {
-        font-size: 16px;
-      }
-    } 
-     
-    
+  .col-1 li {
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    margin-bottom: 1.5rem;
+    img {
+      margin-right: 1rem;
+    }
+    h5 {
+      font-weight: 600;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+  }
+
+  .col-2 li {
+    h3 {
+      color: ${(props) => props.theme.secondaryColor};
+      font-weight: 700;
+    }
+    p {
+      font-size: 16px;
+    }
+  }
 `;
 
 const DataCard = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
 
   useEffect(() => {
-    fetch(URL)
-      .then((response) => response.json())
-      .then((result) => setPerformanceCount(result.total_runs));
+    let cancelled = false;
+    fetchJson(URL)
+      .then((result) => {
+        if (cancelled) return;
+        if (typeof result?.total_runs !== "number") {
+          throw new Error(
+            "Unexpected response shape from performance results API",
+          );
+        }
+        setPerformanceCount(result.total_runs);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch performance test count:", error);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return (
@@ -77,22 +90,13 @@ const DataCard = () => {
           <ul>
             <li>
               <h3>
-                <Counter
-                  duration={3}
-                  separator=","
-                  end={10000}
-                  suffix="+"
-                />
+                <Counter duration={3} separator="," end={10000} suffix="+" />
               </h3>
               <p>Users</p>
             </li>
             <li>
               <h3>
-                <Counter
-                  duration={3}
-                  separator=","
-                  end={performanceCount}
-                />
+                <Counter duration={3} separator="," end={performanceCount} />
               </h3>
               <p>Performance tests run</p>
             </li>

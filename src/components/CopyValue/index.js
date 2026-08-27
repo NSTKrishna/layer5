@@ -4,25 +4,37 @@ import { Box, CustomTooltip } from "@sistent/sistent";
 
 const CopyValue = ({ copyValue }) => {
   const [copyState, setCopyState] = useState({
-    isCopied: false
+    isCopied: false,
+    hasError: false,
   });
 
   const handleCopy = useCallback(async () => {
-    await copyToClipboard(copyValue);
-
-    setCopyState({
-      isCopied: true,
-    });
-
-    setTimeout(() => {
+    try {
+      await copyToClipboard(copyValue);
+      setCopyState({
+        isCopied: true,
+        hasError: false,
+      });
+    } catch (error) {
+      console.error("Failed to copy code to clipboard:", error);
       setCopyState({
         isCopied: false,
+        hasError: true,
       });
-    }, 2000);
+    } finally {
+      setTimeout(() => {
+        setCopyState({
+          isCopied: false,
+          hasError: false,
+        });
+      }, 2000);
+    }
   }, [copyValue]);
 
-
   const getTooltipTitle = () => {
+    if (copyState.hasError) {
+      return "Copy failed";
+    }
     if (copyState.isCopied) {
       return "Copied";
     }

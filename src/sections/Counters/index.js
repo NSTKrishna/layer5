@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { Container, Row, Col } from "../../reusecore/Layout";
 import Counter from "../../reusecore/Counter";
+import { fetchJson } from "../../utils/api";
 
 import CounterSectionWrapper from "./counterSection.style";
 
@@ -11,9 +12,23 @@ const Counters = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
 
   useEffect(() => {
-    fetch(URL)
-      .then(response => response.json())
-      .then(result => setPerformanceCount(result.total_runs));
+    let cancelled = false;
+    fetchJson(URL)
+      .then((result) => {
+        if (cancelled) return;
+        if (typeof result?.total_runs !== "number") {
+          throw new Error(
+            "Unexpected response shape from performance results API",
+          );
+        }
+        setPerformanceCount(result.total_runs);
+      })
+      .catch((error) => {
+        console.error("Failed to fetch performance test count:", error);
+      });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   return (

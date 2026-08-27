@@ -11,6 +11,11 @@ import {
   FeatureInfoContainer,
   CountBlockContainer,
 } from "./featuresColSection.style.js";
+import { fetchJson } from "../../../utils/api";
+
+const PERFORMANCE_COUNT_ENDPOINT =
+  "https://cloud.layer5.io/api/performance/results/total";
+const PERFORMANCE_COUNT_FALLBACK = 250000;
 
 function getServiceFeature(service, index) {
   return (
@@ -18,7 +23,22 @@ function getServiceFeature(service, index) {
       <tbody>
         <tr>
           <td className="icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><rect width="40" height="40" fill="#C9FCF6" rx="5" /><path stroke="#00B39F" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M28 14L17 25L12 20" /></svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              fill="none"
+              viewBox="0 0 40 40"
+            >
+              <rect width="40" height="40" fill="#C9FCF6" rx="5" />
+              <path
+                stroke="#00B39F"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M28 14L17 25L12 20"
+              />
+            </svg>
           </td>
           <td className="service">{service.content}</td>
         </tr>
@@ -38,7 +58,7 @@ function getFeatureBlock(feature, index, performanceCount) {
       </FeatureTitleInfoContainer>
       <FeatureInfoContainer>
         {feature.services.map((service, index) =>
-          getServiceFeature(service, index)
+          getServiceFeature(service, index),
         )}
       </FeatureInfoContainer>
       <CountBlockContainer>
@@ -49,7 +69,12 @@ function getFeatureBlock(feature, index, performanceCount) {
             end={
               feature.count.value !== 0 ? feature.count.value : performanceCount
             }
-            suffix= {(feature.count.description == "components" || feature.count.description == "cloud native integrations") ? "+" : " "}
+            suffix={
+              feature.count.description == "components" ||
+              feature.count.description == "cloud native integrations"
+                ? "+"
+                : " "
+            }
           />
         </h1>
         <p className="count-desc">{feature.count.description}</p>
@@ -60,26 +85,28 @@ function getFeatureBlock(feature, index, performanceCount) {
 
 const Features = () => {
   const [performanceCount, setPerformanceCount] = useState(0);
-  const performanceCountEndpoint = "https://cloud.layer5.io/api/performance/results/total";
 
   useEffect(() => {
-    fetch(performanceCountEndpoint)
-      .then((response) => {
-        if (!response.ok) {
-          setPerformanceCount(250000);
-          throw new Error(`HTTP error! status: ${response.status}`);
+    let cancelled = false;
+    fetchJson(PERFORMANCE_COUNT_ENDPOINT)
+      .then((result) => {
+        if (cancelled) return;
+        if (typeof result?.total_runs !== "number") {
+          throw new Error(
+            "Unexpected response shape from performance results API",
+          );
         }
-        return response.json();
-      })
-      .then((resultcount) => {
-        if (resultcount && typeof resultcount.total_runs === "number") {
-          setPerformanceCount(resultcount.total_runs);
-        }
+        setPerformanceCount(result.total_runs);
       })
       .catch((error) => {
-        console.log("Failed to fetch performance count:", error.message);
-      // Keep default value of 0 if fetch fails
+        console.error("Failed to fetch performance test count:", error);
+        if (!cancelled) {
+          setPerformanceCount(PERFORMANCE_COUNT_FALLBACK);
+        }
       });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const data = LifecycleFeature().features;
@@ -94,12 +121,11 @@ const Features = () => {
       </TitleContainer>
       <FeaturesSectionContainer>
         {data.map((feature, index) =>
-          getFeatureBlock(feature, index, performanceCount)
+          getFeatureBlock(feature, index, performanceCount),
         )}
       </FeaturesSectionContainer>
     </FeaturesSectionWrapper>
   );
 };
-
 
 export default Features;

@@ -382,7 +382,9 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   // handle errors
   if (res.errors) {
-    reporter.panicOnBuild("Error while running GraphQL query.");
+    reporter.panicOnBuild(
+      `Error while running GraphQL query: ${res.errors.map((e) => e.message).join("; ")}`,
+    );
     return;
   }
 
@@ -1266,7 +1268,9 @@ exports.onPostBuild = async ({ graphql, reporter }) => {
   `);
 
   if (result.errors) {
-    reporter.panicOnBuild("Error while running GraphQL query.");
+    reporter.panicOnBuild(
+      `Error while running GraphQL query: ${result.errors.map((e) => e.message).join("; ")}`,
+    );
     return;
   }
 
