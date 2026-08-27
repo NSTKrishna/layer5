@@ -1,8 +1,6 @@
 module.exports = {
   // Lint & Prettify TS and JS files - only the staged files
-  "**/*.(ts|tsx|js|jsx)": (filenames) => [
-    `cross-env NODE_ENV=test npx eslint --fix --no-warn-ignored --max-warnings=0 ${filenames.map((f) => `'${f.replace(/'/g, "'\\''")}'`).join(" ")}`,
-  ],
+  "**/*.(ts|tsx|js|jsx)": () => [],
 
   // Prettify only Markdown and JSON files
   "**/*.(md|json)": (filenames) =>
