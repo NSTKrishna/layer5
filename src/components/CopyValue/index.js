@@ -31,6 +31,7 @@ const CopyValue = ({ copyValue }) => {
     }
   }, [copyValue]);
 
+
   const getTooltipTitle = () => {
     if (copyState.hasError) {
       return "Copy failed";

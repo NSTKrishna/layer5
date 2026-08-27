@@ -17,9 +17,7 @@ const Counters = () => {
       .then((result) => {
         if (cancelled) return;
         if (typeof result?.total_runs !== "number") {
-          throw new Error(
-            "Unexpected response shape from performance results API",
-          );
+          throw new Error("Unexpected response shape from performance results API");
         }
         setPerformanceCount(result.total_runs);
       })

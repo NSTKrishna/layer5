@@ -42,20 +42,15 @@ const ContactForm = () => {
             setIsSubmitting(true);
             try {
               // Webhook to handle all event forms and all signup forms, except for the community member form.
-              await axios.post(
-                "https://hook.us1.make.com/nficb3d7swqkclkl467st4hp4cg65u8o",
-                {
-                  memberFormOne: values,
-                },
-              );
+              await axios.post("https://hook.us1.make.com/nficb3d7swqkclkl467st4hp4cg65u8o", {
+                memberFormOne: values,
+              });
               setmemberFormOne(values);
               setSubmitted(true);
               window.scrollTo(0, 700);
             } catch (error) {
               console.error("Contact form submission failed:", error);
-              setSubmitError(
-                "Something went wrong while submitting the form. Please try again.",
-              );
+              setSubmitError("Something went wrong while submitting the form. Please try again.");
             } finally {
               setIsSubmitting(false);
             }

@@ -1,11 +1,11 @@
 // https://github.com/gatsbyjs/gatsby/blob/master/www/src/utils/copy-to-clipboard.js
 
-export const copyToClipboard = (str) => {
+export const copyToClipboard = str => {
   const clipboard = window.navigator.clipboard;
   /*
-   * fallback to older browsers (including Safari)
-   * if clipboard API not supported
-   */
+     * fallback to older browsers (including Safari)
+     * if clipboard API not supported
+     */
   if (!clipboard || typeof clipboard.writeText !== "function") {
     const textarea = document.createElement("textarea");
     textarea.value = str;
@@ -23,9 +23,7 @@ export const copyToClipboard = (str) => {
     const copySucceeded = document.execCommand("copy");
     document.body.removeChild(textarea);
     if (!copySucceeded) {
-      return Promise.reject(
-        new Error("Copy command was rejected by the browser"),
-      );
+      return Promise.reject(new Error("Copy command was rejected by the browser"));
     }
     return Promise.resolve(true);
   }
